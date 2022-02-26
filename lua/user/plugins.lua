@@ -66,7 +66,7 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/zen-mode.nvim"
-  use "karb94/neoscroll.nvim"
+  -- use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
@@ -104,20 +104,20 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-      }
-    end,
-
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
+  -- use {
+  --   "tzachar/cmp-tabnine",
+  --   config = function()
+  --     local tabnine = require "cmp_tabnine.config"
+  --     tabnine:setup {
+  --       max_lines = 1000,
+  --       max_num_results = 20,
+  --       sort = true,
+  --     }
+  --   end,
+  --
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  -- }
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
@@ -149,6 +149,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
+  use "nvim-telescope/telescope-dap.nvim"
 
   -- Treesitter
   use {
@@ -175,6 +176,7 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
+  use "mfussenegger/nvim-dap-python"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
