@@ -109,3 +109,38 @@ vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, s
 -- DAP
 
 
+keymap('n', ',c', '<cmd>lua require"dap".continue()<CR>', opts)
+keymap('n', ',sv', '<cmd>lua require"dap".step_over()<CR>', opts)
+keymap('n', ',si', '<cmd>lua require"dap".step_into()<CR>', opts)
+keymap('n', ',so', '<cmd>lua require"dap".step_out()<CR>', opts)
+keymap('n', ',tb', '<cmd>lua require"dap".toggle_breakpoint()<CR>', opts)
+keymap('n', ',r', '<cmd>lua require"dap".run_to_cursor()<CR>', opts)
+
+keymap('n', '<leader>dsc', '<cmd>lua require"dap.ui.variables".scopes()<CR>', opts)
+keymap('n', ',dhh', '<cmd>lua require"dap.ui.variables".hover()<CR>', opts)
+keymap('v', ',dhv',
+          '<cmd>lua require"dap.ui.variables".visual_hover()<CR>', opts)
+
+keymap('n', ',duh', '<cmd>lua require"dap.ui.widgets".hover()<CR>', opts)
+keymap('n', '<leader>duf',
+          "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>", opts)
+
+keymap('n', ',cb',
+          '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
+keymap('n', ',mb',
+          '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', opts)
+keymap('n', '<leader>dro', '<cmd>lua require"dap".repl.open()<CR>', opts)
+keymap('n', '<leader>drl', '<cmd>lua require"dap".repl.run_last()<CR>', opts)
+
+
+-- telescope-dap
+keymap('n', '<leader>dcc',
+          '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', opts)
+keymap('n', '<leader>dco',
+          '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', opts)
+keymap('n', '<leader>dlb',
+          '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', opts)
+keymap('n', '<leader>dv',
+          '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
+keymap('n', '<leader>df',
+          '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
