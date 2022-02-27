@@ -15,7 +15,11 @@ vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", nu
 
 local dap, dapui = require "dap", require "dapui"
 
-dapui.setup()
+dapui.setup({
+  sidebar = {
+    size = 80,
+  },
+})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()

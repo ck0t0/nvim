@@ -161,7 +161,12 @@ local mappings = {
 
   d = {
     name = "DAP",
-    b = { "<Cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint" },
+    b = { 
+      name = "Breakpoints",
+      b = {"<Cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint"},
+      c = {"<Cmd>lua require('dap').set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", "Conditional Breakpoint"},
+      m = {"<Cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", "Log Point"},
+    },
     c = { "<Cmd>lua require('dap').continue()<CR>", "Continue" },
     t = { "<Cmd>lua require('dap').run_to_cursor()<CR>", "Run to Cursor" },
     s = { "<Cmd>lua require('dap').step_over()<CR>", "Step over" },
