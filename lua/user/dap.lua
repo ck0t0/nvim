@@ -8,6 +8,7 @@ dap_install.setup {
 }
 
 dap_install.config("python", {})
+dap_install.config("javascript", {})
 -- dap_install.config("codelldb", {})
 
 vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
