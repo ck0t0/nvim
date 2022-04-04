@@ -5,7 +5,7 @@ dap.adapters.codelldb = function(on_adapter)
   local stderr = vim.loop.new_pipe(false)
 
   -- CHANGE THIS!
-  local cmd = '/home/ckotowski/.local/share/nvim/dapinstall/codelldb/extension/adapter/codelldb'
+  local cmd = '/Users/ckotowski/.local/share/nvim/dapinstall/codelldb/extension/adapter/codelldb'
 
   local handle, pid_or_err
   local opts = {
@@ -50,6 +50,18 @@ dap.adapters.codelldb = function(on_adapter)
   end)
 end
 
+dap.configurations.swift = {
+  {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/.build/debug/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = true,
+  },
+}
 dap.configurations.cpp = {
   {
     name = "Launch file",
@@ -65,4 +77,3 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
-dap.configurations.swift = dap.configurations.cpp

@@ -11,14 +11,14 @@ dap_install.config("python", {})
 dap_install.config("javascript", {})
 -- dap_install.config("codelldb", {})
 
-vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "🎯", texthl = "", linehl = "", numhl = "" })
 
 local dap, dapui = require "dap", require "dapui"
 
 dapui.setup({
   sidebar = {
-    size = 80,
+    size = 50,
   },
 })
 
